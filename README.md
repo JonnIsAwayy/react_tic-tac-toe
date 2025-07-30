@@ -1,12 +1,44 @@
-# React + Vite
+# Tic Tac Toe - React Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a classic implementation of the Tic Tac Toe game, developed using **React JS**. It showcases fundamental front-end development principles and my ability to build interactive web applications.
 
-Currently, two official plugins are available:
+## Key Features
+* Dynamic game state management.
+* Component-based UI design for the game board and squares.
+* Logic to determine winning conditions and game progression.
+* Ability to reset the game.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+* React JS
+* JavaScript
+* HTML
+* CSS
 
-## Expanding the ESLint configuration
+## What This Project Demonstrates
+* **Front-end Development:** Building user interfaces with a modern JavaScript library.
+* **React JS Proficiency:** Understanding and applying core React concepts like components, state, and props.
+* **State Management:** Effectively managing application state for game logic.
+* **UI Development:** Creating an interactive and responsive user interface.
+* **Problem-Solving:** Implementing game logic and handling user interactions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## How to Run This Project Locally
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/JonIsAwayy/react-tic-tac-toe.git](https://github.com/JonIsAwayy/react-tic-tac-toe.git)
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd react-tic-tac-toe
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    # or yarn install
+    ```
+4.  **Start the development server:**
+    ```bash
+    npm run dev
+    # or yarn dev
+    ```
+    * This will usually open the app in your browser at `http://localhost:5173` (or a similar port).
