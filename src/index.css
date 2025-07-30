@@ -1,103 +1,174 @@
 body {
+  background-color: #1a1a1a; /* Dark background for the whole page */
+  color: #f0f0f0; /* Light text color for readability */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;       
-  padding: 4vw;              
-  box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-
 
 .app-container {
-  max-width: 420px;          
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
   width: 100%;
+  max-width: 500px;
 }
-
 
 .logo {
-  width: min(70vw, 200px);   
+  width: 150px;
   height: auto;
-  display: block;
-  margin: 0 auto 6vw;
+  margin-bottom: 2rem;
 }
 
+.mode-selection, .difficulty-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 350px;
+}
 
-h2 {
-  font-size: clamp(1.3rem, 5vw, 2rem); 
-  margin: 0 0 4vw;
+.mode-title {
+  font-size: 1.75rem;
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Base styles for large menu buttons */
+.mode-btn, .difficulty-btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mode-btn:hover, .difficulty-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Player vs Player button styling (Blue) */
+.mode-btn.player {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+}
+.mode-btn.player:hover {
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Player vs Computer button styling (Red) */
+.mode-btn.computer {
+  background: linear-gradient(45deg, #dc3545, #c82333);
+}
+.mode-btn.computer:hover {
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* Difficulty Button Colors */
+.difficulty-btn.easy {
+  background: linear-gradient(45deg, #28a745, #218838); /* Green */
+}
+.difficulty-btn.easy:hover {
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.difficulty-btn.medium {
+  background: linear-gradient(45deg, #ffc107, #e0a800); /* Yellow */
+}
+.difficulty-btn.medium:hover {
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}
+
+.difficulty-btn.hard {
+  background: linear-gradient(45deg, #dc3545, #c82333); /* Red */
+}
+.difficulty-btn.hard:hover {
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+.scoreboard {
+  font-size: 1.1rem;
+  background-color: #252525;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
   text-align: center;
-  color: #111;
+  line-height: 1.6;
 }
 
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.status {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  width: min(70vw, 210px);   
-  margin: 0 auto 5vw;
+  gap: 0.75rem;
 }
 
 .square {
-  aspect-ratio: 1 / 1;       
-  font-size: clamp(1.2rem, 7vw, 2.5rem);
-  border: 1px solid #222;
-  background: #fff;
+  width: 100px;
+  height: 100px;
+  background-color: #2c2c2c;
+  border: 2px solid #444;
+  border-radius: 10px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.square:disabled {
-  cursor: default;
-  opacity: 0.6;
+.square:hover {
+  background-color: #3d3d3d;
 }
 
+.button-row {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
 
-.play-btn {
-  display: block;
-  width: 100%;
-  max-width: 240px;
-  margin: 0 auto 2.5vw;
-  padding: 0.7em 1.2em;
-  font-size: clamp(0.9rem, 4vw, 1.1rem);
-  color: #fff;
-  background: #4caf50;
+.button-row button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.play-btn:hover {
-  background: #43a047;
+.play-btn, .reset-btn, .mode-btn.change {
+  background-color: #4a4a4a;
+  color: white;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  body { background: #111; color: #eee; }
-  h2   { color: #eee;      }
-  .square { background: #222; color: #eee; border-color: #555; }
+.play-btn:hover, .reset-btn:hover, .mode-btn.change:hover {
+  background-color: #5a5a5a;
+  transform: translateY(-2px);
 }
-
-.scoreboard{
-  display:flex;
-  gap:12px;
-  font-size:1.1rem;
-  font-weight:600;
-  margin:12px 0 20px;
-}
-
-.button-row{
-  display:flex;
-  gap:12px;
-  margin-top:4px;
-}
-
-.reset-btn{
-  background:#e91e63;
-  color:#fff;
-  border:none;
-  border-radius:6px;
-  padding:0.7em 1.2em;
-  font-size:clamp(.9rem,4vw,1.1rem);
-  cursor:pointer;
-}
-.reset-btn:hover{background:#c2185b;}
